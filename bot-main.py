@@ -43,7 +43,7 @@ async def roll(ctx, *, query="1d20"):
         if query == "help":
             await ctx.send(f'{text.help[str(ctx.command)]}')
         else:
-            await ctx.send(f'You rolled a {dice.request_reponse(query)}')
+            await ctx.send(f'{str(ctx.username)} rolled a {dice.request_reponse(query)}')
     else:
         await ctx.send(f'This is not an appropriate venue for playing games!')
 
@@ -55,7 +55,7 @@ async def advantage(ctx, *, query="0"):
             await ctx.send(f'{text.help[str(ctx.command)]}')
         else:
             await ctx.send(f'{choice(text.advantage)}')
-            await ctx.send(f'You rolled a {max(dice.request_reponse(query), dice.request_reponse(query))}')
+            await ctx.send(f'{str(ctx.username)} rolled a {max(dice.request_reponse(query), dice.request_reponse(query))}')
     else:
         await ctx.send(f'This is not an appropriate venue for playing games!')
 
@@ -67,7 +67,7 @@ async def disadvantage(ctx, *, query="0"):
             await ctx.send(f'{text.help[str(ctx.command)]}')
         else:
             await ctx.send(f'{choice(text.disadvantage)}')
-            await ctx.send(f'You rolled a {min(dice.request_reponse(query), dice.request_reponse(query))}')
+            await ctx.send(f'{str(ctx.username)} rolled a {min(dice.request_reponse(query), dice.request_reponse(query))}')
     else:
         await ctx.send(f'This is not an appropriate venue for playing games!')
 
